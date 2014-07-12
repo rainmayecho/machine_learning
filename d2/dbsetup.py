@@ -14,7 +14,7 @@ database using Steam API
 '''
 
 def get_new_match():
-    key = '8469FB5F835FCEBE1166E994E756A252'
+    key = 'Your Steam API key'
     ## Test account_id = 133662126
     match_response = urllib2.urlopen('''https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V001/?matches_requested=%i&skill=%i&account_id=133662126&key=%s'''%(1, 0, key))
     match = json.load(match_response)['result']['matches'][0]
@@ -24,7 +24,7 @@ def get_new_match():
     return d['players']
         
 def populate(**kwargs):
-    key = '8469FB5F835FCEBE1166E994E756A252'
+    key = 'Your Steam API key'
     query_string = key
     for k in kwargs:
         if kwargs[k]:
